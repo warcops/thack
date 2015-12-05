@@ -1,6 +1,4 @@
-/*global module*/
-// grab the nerd model we just created
-// var Nerd = require('./models/nerd');
+/*global module, require*/
 
 module.exports = function (app) {
 
@@ -10,10 +8,7 @@ module.exports = function (app) {
 
     // api to get the list for the first page
     app.get('/api/buckets', function (req, res) {
-        res.json({
-            "display": "scuba",
-            "key": "scuba1"
-        });
+        require('./controllers/bucketListController')(req, res);
     });
 
     // route to handle creating goes here (app.post)
