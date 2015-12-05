@@ -1,10 +1,11 @@
 {
-    "name": "thoughtsonsale-node-app",
+    "name": "thoughtsonsail-node-app",
     "version": "1.0.0",
-    "description": "thoughts on sale node application",
+    "description": "thoughts on sail node application",
     "keywords": [
     "thoughts",
-    "thoughtsonsale",
+    "thoughtsonsail",
+    "thoughts on sail",
     "amadeus",
     "bluemix",
     "roomstonite"
