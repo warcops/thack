@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wats on your BUCKETLIST</title>
+<link rel="stylesheet" type="text/css" href="CSS/bucketstyle.css">
+<style>
+
+
+</style>
+</head>
+
+<body>
+	<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '278354738905225',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "http://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  function login(){
+FB.getLoginStatus(function(r){ //check if user already authorized the app
+     if(r.status === 'connected'){
+            window.location.href = 'fbconnect.php';
+     }else{
+        FB.login(function(response) { // opens the login dialog
+                if(response.authResponse) { // check if user authorized the app
+              //if (response.perms) {
+                    window.location.href = 'fbconnect.php';
+            } else {
+              // user is not logged in
+            }
+     },{scope:'email'}); //permission required by the app
+ }
+});
+}
+
+</script>
+<a href='#' onclick='login();'>Facebook Login</a>
+	<div id="header">
+		<h1>Could be your bucket list !!!!!</h1>
+	</div>
+	<div id="bucketList">
+		<div class="bucketContent">
+			<ul>
+				<li><a href="">Scuba Diving</a></li>
+    			<li><a href="">Hiking</a></li>
+    			<li><a href="">Dirt biking</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="section">
+TRAVELLER OF THE DAY
+</div>
+
+	<div id="footer">
+		anvesh@somyashree
+	</div>
+	
+
+</body>
