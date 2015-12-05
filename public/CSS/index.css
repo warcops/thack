@@ -5,12 +5,20 @@ body {
 
 position: absolute;*/
 }
+.ui-trav-day{
+    background-image: url("../IMAGES/index.jpg"); 
+    background-repeat: no-repeat; 
+    height:300px;
+    width:495px;
+}
 
-#header {
+.pageHeader {
     background-color:black;
     color:white;
     text-align:center;
     padding:5px;
+    height:75px;
+    margin: 40px 0 20px;
 }
 #nav {
     line-height:30px;
@@ -38,12 +46,14 @@ position: absolute;*/
     height:289px;
     width:  1152px;
 }
-#footer {
+.ui-footer {
     background-color:black;
     color:white;
     clear:both;
     text-align:center;
-   padding:5px;    
+   padding:5px;   
+   margin: 40px 0 20px; 
+   height:50px;
 }
 #travPic_placeholder{
     background-image: url("../IMAGES/index.jpg"); 
