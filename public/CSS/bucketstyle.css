@@ -33,7 +33,10 @@ position: absolute;*/
 #section {
     width:450px;
     float:left;
-    padding:10px;    
+    padding:10px;  
+    background-color:lightblue;  
+    height:289px;
+    width:  1152px;
 }
 #footer {
     background-color:black;
@@ -47,6 +50,10 @@ position: absolute;*/
     background-repeat: no-repeat; 
     height:300px;
     width:300px;
+}
+.position-button{
+    top: 189px;
+    right: -944px;
 }
 #bucketList{
 	background-image: url("../IMAGES/index.jpg");    
