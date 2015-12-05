@@ -4,12 +4,12 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 // configuration ===========================================
 
 // config files
-// var db = require('./config/db');
+//var db = require('./config/db');
 
 // set our port
 var port = process.env.TFS_PORT || 8080;
@@ -17,13 +17,18 @@ var ipaddress = process.env.TFS_IP;
 if (typeof ipaddress === "undefined") {
     //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
     //  allows us to run/test the app locally.
-    console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
+    console.warn('No TFS_IP var, using 127.0.0.1');
     ipaddress = "127.0.0.1";
 }
 
 // connect to our mongoDB database 
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url); 
+//mongoose.connect(db.url); 
+
+//var dbConnection = mongoose.connection;
+//dbConnection.on('error', console.error.bind(console, 'connection error:'));
+//dbConnection.on('open' , function(callback) {
+//    console.log('db connection secured');
+//});
 
 // setup prerender for seo
 app.use(require('prerender-node'));
@@ -61,7 +66,7 @@ require('./app/routes')(app); // configure our routes
 app.listen(port, ipaddress);
 
 // shoutout to the user                     
-console.log('Thoughts for sale on port ' + port);
+console.log('Thoughts for sail on port ' + port);
 
 // expose app           
 exports = module.exports = app;
