@@ -1,41 +1,124 @@
-var myApp = angular.module('myApp', ['ui.router', 'ocLazyLoad']);
+/*jslint browser: true*/
+/*global angular*/
+var tfsApp = angular.module('TFSApp', ['ui.router', 'oc.lazyLoad']);
 
-myApp.config(function ($stateProvider, $urlRouterProvider) {
-    //
-    // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/home");
-    //
-    // Now set up the states
-    $stateProvider
-        .state('search', {
-            url: "/state1",
-            templateUrl: "partials/state1.html"
-        })
-        .state('places', {
-            url: "/places",
-            templateUrl: "partials/state1.list.html",
-            controller: function ($scope) {
-                $scope.items = ["A", "List", "Of", "Items"];
-            }
-        })
-        .state('itinerary', {
-            url: "/itinerary",
-            templateUrl: "partials/state2.html"
-        })
-        .state('editHotel', {
-            url: "/list",
-            templateUrl: "partials/state2.list.html",
-            controller: function ($scope) {
-                $scope.things = ["A", "Set", "Of", "Things"];
-            }
-        }).state('editTravel', {
-            url: "/itinerary",
-            templateUrl: "partials/state2.html"
-        }).state('editActivity', {
-            url: "/itinerary",
-            templateUrl: "partials/state2.html"
-        }).state('editExtra', {
-            url: "/itinerary",
-            templateUrl: "partials/state2.html"
-        });
-});
+tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+              function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+
+        // For any unmatched url, redirect to /state1
+        $urlRouterProvider.otherwise("/search");
+
+        // Now set up the states
+        $stateProvider
+            .state('search', { // search
+                url: '/search',
+                templateUrl: '/js/views/search.html',
+                controller: 'searchController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/searchController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('places', {
+                url: '/places',
+                templateUrl: '/js/views/places.html',
+                controller: 'placesController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/placesController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('itinerary', {
+                url: '/itinerary',
+                templateUrl: '/js/views/itinerary.html',
+                controller: 'placesController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/itineraryController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('editHotel', {
+                url: '/editHotel',
+                templateUrl: '/js/views/editHotel.html',
+                controller: 'editHotelController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/editHotelController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('editTravel', {
+                url: '/editTravel',
+                templateUrl: '/js/views/editTravel.html',
+                controller: 'editHotelController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/editTravelController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('editActivity', {
+                url: '/editActivity',
+                templateUrl: '/js/views/editActivity.html',
+                controller: 'editHotelController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/editActivityController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('editExtra', {
+                url: '/editExtra',
+                templateUrl: '/js/views/editExtra.html',
+                controller: 'editExtraController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/editExtraController.js'
+                            ]
+                        });
+                    }]
+                }
+            });
+        }
+]);
+
+// set the state to root scope. this will used to sensitize the screen based on url
+tfsApp.run(['$rootScope', '$state', function ($rootScope, $state) {
+    $rootScope.state = $state;
+}]);
