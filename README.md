@@ -1,0 +1,1 @@
+The node application for the THack Bangalore, 2015. This app will solve the problem of aspirational travelling.

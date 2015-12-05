@@ -1,0 +1,41 @@
+{
+    "name": "thoughtsonsale-node-app",
+    "version": "1.0.0",
+    "description": "thoughts on sale node application",
+    "keywords": [
+    "thoughts",
+    "thoughtsonsale",
+    "amadeus",
+    "bluemix",
+    "roomstonite"
+  ],
+    "author": {
+        "name": "warcops",
+        "email": "warcops@gmail.com",
+        "url": "http://www.novicethought.com/"
+    },
+    "homepage": "http://www.novicethought.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/warcops/thack"
+    },
+
+    "engines": {
+        "node": ">= 0.12.0",
+        "npm": ">= 1.0.0"
+    },
+
+    "dependencies": {
+        "express": "~4.5.1",
+        "mongoose": "~3.8.0",
+        "body-parser": "~1.4.2",
+        "method-override": "~2.0.2",
+        "prerender-node": "~2.1.0",
+        "compression": "1.6.0"
+    },
+    "devDependencies": {},
+    "bundleDependencies": [],
+
+    "private": true,
+    "main": "server.js"
+}
