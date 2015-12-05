@@ -5,6 +5,7 @@
         "angular": "latest",
         "angular-route": "latest",
         "angular-animate": "latest",
-        "angular-aria": "latest"
+        "angular-aria": "latest",
+        "ocLazyLoad": "latest"
     }
 }
