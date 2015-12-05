@@ -25,6 +25,21 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
                     }]
                 }
             })
+            .state('welcome', {
+                url: '/welcome',
+                templateUrl: '/js/views/welcome.html',
+                controller: 'welcomeController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/welcomeController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
             .state('places', {
                 url: '/places',
                 templateUrl: '/js/views/places.html',
