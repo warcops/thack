@@ -13,7 +13,7 @@ position: absolute;*/
 }
 
 .pageHeader {
-    background-color:black;
+    background-color:#0066CC;
     color:white;
     text-align:center;
     padding:5px;
@@ -47,7 +47,7 @@ position: absolute;*/
     width:  1152px;
 }
 .ui-footer {
-    background-color:black;
+    background-color:#0066CC;
     color:white;
     clear:both;
     text-align:center;
