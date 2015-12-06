@@ -1,0 +1,56 @@
+[
+    {
+        "place": "goa",
+        "providers": [
+            {
+                "name": "xyz cabs",
+                "cars": [
+                    {
+                        "model": "maruti suzuki swift",
+                        "rate": "12"
+                    },
+                    {
+                        "model": "toyota etios",
+                        "rate": "11"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "place": "pondicherry",
+        "providers": [
+            {
+                "name": "abc cabs",
+                "cars": [
+                    {
+                        "model": "maruti suzuki swift",
+                        "rate": "12"
+                    },
+                    {
+                        "model": "toyota etios",
+                        "rate": "11"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "place": "mysore",
+        "providers": [
+            {
+                "name": "a2z cabs",
+                "cars": [
+                    {
+                        "model": "maruti suzuki swift",
+                        "rate": "12"
+                    },
+                    {
+                        "model": "toyota etios",
+                        "rate": "11"
+                    }
+                ]
+            }
+        ]
+    }
+]

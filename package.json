@@ -32,7 +32,8 @@
         "body-parser": "~1.4.2",
         "method-override": "~2.0.2",
         "prerender-node": "~2.1.0",
-        "compression": "1.6.0"
+        "compression": "1.6.0",
+        "node-cache": "3.0.0"
     },
     "devDependencies": {},
     "bundleDependencies": [],

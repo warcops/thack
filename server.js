@@ -4,12 +4,16 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
+var NodeCache = require( "node-cache" );
 
 // configuration ===========================================
 
 // config files
 //var db = require('./config/db');
+
+//configure cache
+var tfsCache = new NodeCache({stdTTL: 0, checkperiod: 0});
 
 // set our port
 var port = process.env.TFS_PORT || 8080;
@@ -59,7 +63,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+require('./app/routes')(app, tfsCache); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080 or the env ip and port

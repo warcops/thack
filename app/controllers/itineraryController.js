@@ -1,8 +1,5 @@
 /*global module, require*/
 
-// gather all the models
-// var activityModel = require('../models/activity');
-
 var fs = require('fs');
 
 // handle the requests for buckets
