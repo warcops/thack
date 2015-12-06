@@ -6,7 +6,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
               function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
         // For any unmatched url, redirect to /state1
-        $urlRouterProvider.otherwise("/search");
+        //$urlRouterProvider.otherwise("/search");/*commemted because it is not loading FB buttons*/
 
         // Now set up the states
         $stateProvider
@@ -20,6 +20,21 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
                             name: 'files',
                             files: [
                                 '/js/controllers/searchController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
+            .state('welcome', {
+                url: '/welcome',
+                templateUrl: '/js/views/welcome.html',
+                controller: 'welcomeController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/welcomeController.js'
                             ]
                         });
                     }]
@@ -43,7 +58,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
             .state('itinerary', {
                 url: '/itinerary',
                 templateUrl: '/js/views/itinerary.html',
-                controller: 'placesController',
+                controller: 'itineraryController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -73,7 +88,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
             .state('editTravel', {
                 url: '/editTravel',
                 templateUrl: '/js/views/editTravel.html',
-                controller: 'editHotelController',
+                controller: 'editTravelController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -85,10 +100,25 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
                     }]
                 }
             })
+            .state('activity', {
+                url: '/activity',
+                templateUrl: '/js/views/activity.html',
+                controller: 'activityController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/activityController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
             .state('editActivity', {
                 url: '/editActivity',
                 templateUrl: '/js/views/editActivity.html',
-                controller: 'editHotelController',
+                controller: 'editActivityController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({

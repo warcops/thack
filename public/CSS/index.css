@@ -13,7 +13,7 @@ position: absolute;*/
 }
 
 .pageHeader {
-    background-color:black;
+    background-color:#006666;
     color:white;
     text-align:center;
     padding:5px;
@@ -47,7 +47,7 @@ position: absolute;*/
     width:  1152px;
 }
 .ui-footer {
-    background-color:black;
+    background-color:#0066CC;
     color:white;
     clear:both;
     text-align:center;
@@ -87,3 +87,15 @@ position: absolute;*/
 a:hover { 
 text-decoration: underline;
 }
+
+/**/
+
+.fb_iframe_widget iframe {
+    opacity: 0;
+}
+
+.fb_iframe_widget {
+  background-image: url("../IMAGES/login_button.jpg");
+  background-repeat: no-repeat; 
+}
+/**/
