@@ -2,6 +2,6 @@
 /*global angular*/
 
 angular.module('TFSApp').controller('itineraryController', 
-                                    ['$scope', '$http', function($scope, $http) {
+                                    ['$scope', '$rootScope' ,  '$http', function($scope, $rootScope , $http) {
     
 }]);

@@ -58,7 +58,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
             .state('itinerary', {
                 url: '/itinerary',
                 templateUrl: '/js/views/itinerary.html',
-                controller: 'placesController',
+                controller: 'itineraryController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -88,7 +88,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
             .state('editTravel', {
                 url: '/editTravel',
                 templateUrl: '/js/views/editTravel.html',
-                controller: 'editHotelController',
+                controller: 'editTravelController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -100,10 +100,25 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
                     }]
                 }
             })
+            .state('activity', {
+                url: '/activity',
+                templateUrl: '/js/views/activity.html',
+                controller: 'activityController',
+                resolve: {
+                    deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'files',
+                            files: [
+                                '/js/controllers/activityController.js'
+                            ]
+                        });
+                    }]
+                }
+            })
             .state('editActivity', {
                 url: '/editActivity',
                 templateUrl: '/js/views/editActivity.html',
-                controller: 'editHotelController',
+                controller: 'editActivityController',
                 resolve: {
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
