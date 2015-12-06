@@ -87,3 +87,15 @@ position: absolute;*/
 a:hover { 
 text-decoration: underline;
 }
+
+/**/
+
+.fb_iframe_widget iframe {
+    opacity: 0;
+}
+
+.fb_iframe_widget {
+  background-image: url("../IMAGES/login_button.jpg");
+  background-repeat: no-repeat; 
+}
+/**/

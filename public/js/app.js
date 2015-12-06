@@ -6,7 +6,7 @@ tfsApp.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
               function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
         // For any unmatched url, redirect to /state1
-        $urlRouterProvider.otherwise("/search");
+        //$urlRouterProvider.otherwise("/search");/*commemted because it is not loading FB buttons*/
 
         // Now set up the states
         $stateProvider

@@ -1,3 +1,25 @@
+ <html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="content-type" content="text/html">
+        <meta charset="utf-8">
+        <title>BucketList - Whats on your list</title>
+        
+        <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/activity.css">
+        <style type="text/css">
+           
+        </style>
+    </head>
+
+  <div class="row" ui-view>
+                <div class="hidden-xs hidden-sm col-md-4">
+                    <div class="row ui-trav-day">
+                        <strong>Traveller of the day</strong>
+                    </div>
+                </div>
  <div class="col-xs-12 col-md-8">
             <div class="row">
                 <div class="form-group has-feedback">
@@ -8,7 +30,7 @@
                 <div>
                     <ul>
                       <li>
-                        {{ $scope.proposals.display + ', ' + $scope.proposals.action + ' , ' + $scope.proposals.places }}
+                        
                         <a href="#/activity" style="cursor:pointer"><input type="text" ng-model="proposals.display" disabled="disabled" style="border: 0; background-color:transparent; cursor:pointer;" /></a>
                       </li>
                     </ul>
@@ -16,3 +38,5 @@
                 </div>
             </div>
         </div>
+   </div>
+ </html>
