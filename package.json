@@ -33,7 +33,8 @@
         "method-override": "~2.0.2",
         "prerender-node": "~2.1.0",
         "compression": "1.6.0",
-        "node-cache": "3.0.0"
+        "node-cache": "3.0.0",
+        "request": "2.67.0"
     },
     "devDependencies": {},
     "bundleDependencies": [],
