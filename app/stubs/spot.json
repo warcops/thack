@@ -14,7 +14,8 @@
                         "state": "goa",
                         "pin": "403516",
                         "lat": "15.551228",
-                        "long": "73.765437"
+                        "long": "73.765437",
+                        "nearestAirport": "GOI"
                     },
                     {
                         "name": "dive goa, sinq beach club",
@@ -25,34 +26,8 @@
                         "state": "goa",
                         "pin": "403806",
                         "lat": "15.514525",
-                        "long": "73.838966"
-                    }
-                ]
-            },
-            {
-                "place": "pondicherry",
-                "spots": [
-                    {
-                        "name": "goa aquatics",
-                        "street": "little italy, 136/1 guaravaddo",
-                        "landmark": "calangute",
-                        "area": "calangute",
-                        "city": "calangute",
-                        "state": "goa",
-                        "pin": "403516",
-                        "lat": "15.551228",
-                        "long": "73.765437"
-                    },
-                    {
-                        "name": "dive goa, sinq beach club",
-                        "street": "opposite taj holiday village",
-                        "landmark": "taj holiday village",
-                        "area": "candolim",
-                        "city": "candolim",
-                        "state": "goa",
-                        "pin": "403806",
-                        "lat": "15.514525",
-                        "long": "73.838966"
+                        "long": "73.838966",
+                        "nearestAirport": "GOI"
                     }
                 ]
             }
