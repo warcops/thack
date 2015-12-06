@@ -2,17 +2,11 @@
     {
         "display": "scuba diving",
         "action": "scuba",
-        "places": [
-            "goa",
-            "pondicherry"
-        ]
+        "places": ["goa","pondicherry"]
     },
     {
         "display": "sky diving",
         "action": "skyDive",
-        "places": [
-            "mysore",
-            "pondicherry"
-        ]
+        "places": ["mysore","pondicherry"]
     }
 ]

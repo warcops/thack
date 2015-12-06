@@ -14,7 +14,7 @@ module.exports = function (app, tfsCache) {
     });
     
     // api to get the places
-    app.get('/api/placesList', function (req, res) {
+    app.get('/api/places', function (req, res) {
         require('./controllers/placesController')(req, res, tfsCache);
     });
     

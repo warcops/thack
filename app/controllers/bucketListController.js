@@ -21,15 +21,20 @@ module.exports = function (req, res, tfsCache) {
                     res.json({error: err});
                 }
                 activities = JSON.parse(activities);
-                tfsCache.set('activity', activities);
-                acts = getActivities(activities);
+                tfsCache.set('activity', activities, function(err, success) {
+                    if(err) {
+                        res.json({error: err});
+                    }
+                    acts = getActivities(activities);
+                    res.json(acts);
+                });
             });
         } else {
-            activities = JSON.parse(activities);
             acts = getActivities(activities);
+            res.json(acts);
         }
         
-        res.json(acts);
+        
     };
     
     var getActivities = function(activities) {
@@ -37,6 +42,7 @@ module.exports = function (req, res, tfsCache) {
         for(var actCount = 0; actCount < activities.length; actCount++) {
             acts.push({"display": activities[actCount].display, "action": activities[actCount].action});
         }
+        return acts;
     };
     
     // check if the content is present in cache, if not load from file

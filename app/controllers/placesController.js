@@ -16,6 +16,7 @@ module.exports = function (req, res, tfsCache) {
                 
             }   
         }
+        return places;
     };
     
     var callback = function(err, activities) {
@@ -30,15 +31,21 @@ module.exports = function (req, res, tfsCache) {
                     res.json({error: err});
                 }
                 activities = JSON.parse(activities);
-                tfsCache.set('activity', activities);
-                places = getPlaces(activities);
+                tfsCache.set('activity', activities, function(err, success) {
+                    if(err) {
+                        res.json({error: err});
+                    }
+                    places = getPlaces(activities);
+                    res.json(places);
+                });
+                
             });
         } else {
-            activities = JSON.parse(activities);
             places = getPlaces(activities);
+            res.json(places);
         }
         
-        res.json(places);
+        
     };
     
     // check if the content is present in cache, if not load from file
